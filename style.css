@@ -1,10 +1,9 @@
-html,
-body {
-    height: 100%;
+.old {
+    background-image: url('hand_drawn_logo.svg');
 }
 
 canvas {
     height: 800px;
     width: 800px;
-    background-image: url('logo_skillbill.svg');
+    
 }
