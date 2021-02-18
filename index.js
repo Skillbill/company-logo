@@ -46,10 +46,10 @@ eye.fillColor = color1;
 paths.push(eye);
 paths.push(piece(eye, color2, { tx: width, ty: 0, sx: -1, sy: 1 }));
 
-const speak = new paper.Path.Circle(new paper.Point(355, 400), 35);
-speak.fillColor = color2;
-paths.push(speak);
-paths.push(piece(speak, color1, { tx: width, ty: 0, sx: -1, sy: 1 }));
+const voice = new paper.Path.Circle(new paper.Point(355, 400), 35);
+voice.fillColor = color2;
+paths.push(voice);
+paths.push(piece(voice, color1, { tx: width, ty: 0, sx: -1, sy: 1 }));
 
 document.getElementById("toggle-old").onclick = () => {
     let withOld = false;
