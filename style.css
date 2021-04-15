@@ -1,9 +1,10 @@
-.old {
-    background-image: url('hand_drawn_logo.svg');
+.container {
+    width: 100%;
+    text-align: center;
 }
 
 canvas {
+    display: inline;
     height: 800px;
     width: 800px;
-    
 }

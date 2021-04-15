@@ -1,4 +1,3 @@
-
 const width = 800;
 const height = 800;
 const color1 = '#003365';
@@ -50,31 +49,6 @@ const voice = new paper.Path.Circle(new paper.Point(355, 400), 35);
 voice.fillColor = color2;
 paths.push(voice);
 paths.push(piece(voice, color1, { tx: width, ty: 0, sx: -1, sy: 1 }));
-
-document.getElementById("toggle-old").onclick = () => {
-    let withOld = false;
-    for (c of canvas.classList) {
-        if (c === 'old') {
-            withOld = true;
-        }
-    }
-    if (withOld) {
-        canvas.classList.remove('old');
-        for (p of paths) {
-            p.setFullySelected(false);
-            p.fillColor = p.fillColor_;
-        }
-    } else {
-        canvas.classList.add('old');
-        for (p of paths) {
-            p.setFullySelected(true);
-            p.fillColor_ = p.fillColor;
-            p.fillColor = undefined;
-        }
-    }
-    
-}
-
 
 document.getElementById("download-to-svg").onclick = () => {
     var fileName = "logo.svg"
