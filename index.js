@@ -60,14 +60,17 @@ steps.push(() => piece(voice, color1, { tx: width, ty: 0, sx: -1, sy: 1 }));
 const playPause = () => {
     playVsPause = !playVsPause;
     if (playVsPause) {
-        console.log("play")
         playInterval = setInterval(() => {
             next();
         }, 100)
     } else {
-        console.log("pause")
         clearInterval(playInterval);
     }
+}
+
+const stop = () => {
+    playVsPause = false;
+    clearInterval(playInterval);
 }
 
 const prev = () => {
@@ -83,7 +86,6 @@ const prev = () => {
 }
 
 const next = () => {
-    console.log(animationIndex);
     if (animationIndex < steps.length) {
         steps[animationIndex]();
         animationIndex++;
@@ -96,10 +98,20 @@ const next = () => {
     }
 }
 
-document.getElementById("button-prev").onclick = prev;
+document.getElementById("button-prev").onclick = () => {
+    if (playVsPause) {
+        stop();
+    }
+    prev();
+}
 
 document.getElementById("button-play-pause").onclick = playPause;
 
-document.getElementById("button-next").onclick = next;
+document.getElementById("button-next").onclick = () => {
+    if (playVsPause) {
+        stop();
+    }
+    next();
+}
 
 playPause();
